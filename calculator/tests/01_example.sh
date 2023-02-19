@@ -30,8 +30,14 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   exit 1
 fi
 
-# Test 04: Ensure another simple case has correct output...
+# Test 04: Ensure subtraction works correctly
 if [[ $($CALCULATOR 3 - 1) -ne 2 ]]; then  # If the output of the program is not 2...
+  echo 'ERROR! A valid run of the calculator (1 + 1) failed to produce 2 as an output!'
+  exit 1
+fi
+
+# Test 05: Ensure division works correctly
+if [[ $($CALCULATOR 4 / 2) -ne 2 ]]; then  # If the output of the program is not 2...
   echo 'ERROR! A valid run of the calculator (1 + 1) failed to produce 2 as an output!'
   exit 1
 fi
